@@ -11,7 +11,7 @@ html{
 
 .container{
     display: flex;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     font-size: 3.2rem;
     align-items: center;
     justify-content: center;
@@ -22,12 +22,12 @@ html{
     width: 4.0rem;
     height: 4.0rem;
     border-radius: 0.3rem;
-    /* background-color: coral; */
+    background-color: coral;
 }
 .box2{
     width: 4.0rem;
     height: 4.0rem;
     border-radius: 0.3rem;
-    /* background-color: cornflowerblue; */
+    background-color: cornflowerblue; 
 }
 
