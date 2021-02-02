@@ -9,17 +9,26 @@ html{
  font-size: 62.5%;
  background-color:darkgrey;
 }
+img{
+    width: 5rem;
+    vertical-align:middle;
+}
+
+.logo{
+    margin: 0;
+}
 
 .container{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     display: flex;
     flex-wrap: wrap;
     font-size: 3.2rem;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     margin: 5rem 5rem 0rem 5rem;
     min-width: 30rem;
     border: 0.1rem rgb(44, 41, 41) solid;
-    background-color:black ;
+    background-color:indianred ;
     padding: 2rem 2rem;
     /* box-shadow:rgb(78, 74, 74) 0.1rem 0.1rem; */
 }
