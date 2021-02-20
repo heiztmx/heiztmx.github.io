@@ -6,11 +6,131 @@
     <link rel="stylesheet" href="./style.css">
     <title>Bienvenido a Blog Heizt 2.0</title>
     <!--fontasowe-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    
+
+    <script language="JavaScript">
+
+        function iniCopos(num, anc, alto, veloc)
+
+        {
+
+        var i, x, y;
+
+        for (i = 0; i<num; i++)
+
+            {
+
+            x = parseInt(Math.random()*anc);
+
+            y = parseInt(Math.random()*alto);
+
+            dibujaCopo(i,x,y);
+
+            }
+
+        window.copos = new Array(num);
+
+        window.coposAlto = alto;
+
+        window.coposAncho = anc;
+
+        window.coposVeloc = veloc;
+
+        }
+
+        
+
+        function dibujaCopo(num, x, y)
+
+        {
+
+        var tama = Math.round(Math.random())+ 3
+
+        document.write('<div id="c'+num+'" style="position:absolute; width:1px; '); 
+
+        document.write('height:1px; z-index:0; left:'+x+'px; top:'+y+'px; '); 
+
+        document.write(' background-color: #FFFFFF">'); 
+
+        document.write('<font size="+'+tama+'" color = "#FFFFFF" >*</font>'); 
+
+        document.write('</div>');
+
+        }
+
+        function iniNevada()
+
+        {
+
+        for (i = 0; i < window.copos.length; i++)
+
+if (document.all)
+
+    window.copos[i] = document.all["c"+i]
+
+else 
+
+    window.copos[i] = document.getElementById("c"+i);
+
+nevar();
+
+} 
+
+
+
+function nevar()
+
+{
+
+var x, y;
+
+for (i = 0; i < copos.length; i++)
+
+    {
+
+    y = parseInt(window.copos[i].style.top);
+
+    x = parseInt(window.copos[i].style.left);
+
+    if (Math.random() > 0.5)
+
+        y += parseInt(Math.random()+1);
+
+    y += parseInt(Math.random()+2);
+
+    window.copos[i].style.top = y;
+
+    if (y > document.body.scrollTop + coposAlto)
+
+        {
+
+        window.copos[i].style.top = document.body.scrollTop- 
+
+        Math.round(Math.random()*10); 
+
+        window.copos[i].style.left =                 parseInt(Math.random()*coposAncho-1);
+
+        }
+
+    }
+
+setTimeout("nevar()", coposVeloc);
+
+}
+
+</script>
+
+
 </head>
-<body>
+<body onload="iniNevada()">
+
+    <script language="JavaScript">
+
+      iniCopos(80, 1200, 300, 100);
+
+      </script>
+
     <main class="container">
         <figure class="logo"><img src="./imagenes/donat.png" alt="Este es el logo del Blog"></figure>
         <div class="box5">
@@ -93,5 +213,8 @@
         <h3>Jesus Esteban Avila Gutierrez</h3>
         
        </footer>
+       <script>
+        inicializar(50, 400, 300, 100, 100, 50);
+    </script>
 </body>
 </html>
